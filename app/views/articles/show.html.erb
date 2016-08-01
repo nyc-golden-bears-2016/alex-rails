@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Greg's list</h1>
+  <h2><%= Article.find(@posts.first.article_id).subject %>:</h2>
+
+  <ul>
+  <% @posts.each do |post| %>
+  <li>
+    <a href="/posts/<%= post.id %>"><%= post.title %></a>
+  </li>
+  <% end %>
+</ul>
+
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Greg's list</h1>
+  <h2><%= Article.find(@post.article_id).subject %>:</h2>
+
+  <article>
+    <header><%= @post.title %></header>
+    <p><%= @post.body %></p>
+  </article>
+
+</body>
+</html>
+
+<%= form_for(@post, :html => { :method => :delete}) do |f| %>
+<%= f.submit :value => "Delete" %>
+<% end %>
+
+<%= form_for(@post, :html => { :method => :patch}) do |f| %>
+<%= f.label :title %><br>
+<%= f.text_field :title %><br>
+<%= f.label :body %><br>
+<%= f.text_area :body %><br>
+<%= f.submit :value => "update" %>
+<% end %>
