@@ -1,0 +1,11 @@
+<% @options = @articles.map {|article| [article.subject, article.id]} %>
+
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :body %>
+  <%= f.text_area :body %><br>
+  <%= select_tag('post[article_id]', options_for_select(@options , :selected => :option)) %>
+  <%= submit_tag("create post") %>
+<% end %>

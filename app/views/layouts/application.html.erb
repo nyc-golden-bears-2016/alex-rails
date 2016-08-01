@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Craigslist</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/posts/new">Create a post</a>
+  </nav>
+  <body>
+    <%= yield %>
+  </body>
+</html>
